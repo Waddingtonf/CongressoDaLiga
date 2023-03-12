@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background: linear-gradient(180deg, #5C3E81 6.59%, #6E439C 46.14%, #9B51E0 100%);
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    display: flex;
+}
+
+.rectangle{
+    display: flex;
+    position: absolute;
+    width: 95vw;
+    margin-top: 68%;
+}
+
+.rectangle1{
+    display: flex;
+    position: absolute;
+    min-width: 100vw;
+    width: 100vw;
+    margin-top: 73%;
+}
+
+.logo {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    margin-top: 3vh;
+    margin-left: 12.5vw;
+    width: 75vw;
+    height: 30vh;
+}
+
+#botao{
+    padding: 1px;
+	width: 80vw;
+    height: 55px;
+	border-radius: 15px;
+    margin-top: 88vh;
+    margin-left: 3vw;
+	border: none;
+    position: absolute;
+	text-transform: uppercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: white;
+	background-color: #BA1065;
+	cursor: pointer;
+    box-shadow: 0 0 5px #202020;
+}
+
+.arrow {
+    box-sizing: border-box;
+    width: 40px;
+    color: white;
+    position: absolute;
+    margin-top: 89.3vh;
+    margin-left: 87vw;
+}
+
+.logo-congresso{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    width: 85vw;
+    margin-top: 40vh;
+    margin-left: 7vw;
+}
+
+/* @media desktop and (min-width: 700px) and (orientation: landscape) {
+    .container{
+        height: 1980px;
+    }
+
+    .logo-congresso{
+        width: 10vw;
+        height: 5vh;
+        margin-top: 5vh;
+    }
+} */

@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação - Congresso da Liga</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{% static 'css/qrcode.css'%}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}">
+
+</head>
+
+{% block body %}
+<body>
+    <!-- Container  BG -->
+    <div class="container">
+        <span class="scan"><p>Scan QRCode</p></span>
+        <img class="qrcode" src="{% static 'img/congresso/qrcode.svg'%}">
+        <span class="checkin"><p>Check In</p></span>
+        <form enctype="multipart/form-data" action="/doconfirm/" method="POST">
+            {% csrf_token %}
+            {% if msg %}
+            <span class="comando" style="font-size: 18px; gap: 1vh"><p>Curso Selecionado:<br> {{ msg }}</p></span>
+            <span class="comando" style="font-size: 18px; gap: 1vh"><p>Aluno: {{user.username}}</p></span>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="checkbox-1" class="confirmacao" value='False;'checked='True' onclick=myCheckBox()>
+                <label for='checkbox-1' class="check"> Confirmar Presença! </label>
+            </div>
+            <span class="adesao"><p>Ao concluir, as informações você aceita os <br> termos de adesão e de responsabilidade.</p></span>
+            <a class="botao"><button type="submit">Concluir</button></a>
+            {% endif %}
+        </form>
+    <!--   <img class="arrow" src="{% static 'img/Arrow.svg' %}">-->
+    </div>
+</body>
+
+{% endblock %}
+</html>
+
+<script>
+    function myCheckBox() {
+
+        var check = document.getElementById('checkbox-1').checked;
+
+        document.getElementById('checkval').value = check
+
+    }
+
+    // When user clicks over color picker,
+    // myColor() function is called
+    document.getElementById('checkbox-1')
+        .addEventListener('input', myCheckBox);
+</script>

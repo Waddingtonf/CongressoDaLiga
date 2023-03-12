@@ -1,0 +1,62 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Congresso LIGA (Admin)</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href= "{% static 'css/cadastro.css' %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static '/img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}">
+
+</head>
+
+{% block body %}
+<body>
+    <!-- Container  BG -->
+    <div class="container">
+        <div class="rectangle1"><img src="{% static 'img/login/Rectangle2.svg' %}"></div>
+        <div class="rectangle"><img src="{% static 'img/login/Rectangle1.svg' %}"></div>
+        <div>
+            <img class="circle" src="{% static 'img/login/business-3d-young-man-in-formalwear-standing-with-hands-on-hip.svg' %}">
+        </div>
+
+        <div class="welcome"> <p> Bem Vindo! </p> </div>
+
+            <form name="form-login" action="/docad/" method="POST">
+
+                {% if msg %}
+                    <span style="display: flex;position: absolute;width: 100vw;margin-top: 45vh;font-family: 'Inter';font-style: normal;font-weight: 500;font-size: 18px;line-height: 16px;text-align: center;justify-content: center;align-items: center;color:#BA1065;"> <p>   {{ msg }}  </p></span>
+                {% endif %}
+
+                {% csrf_token %}
+                <div class="login">
+                    <div class="form-user">
+                        <span class="usuario">Usuário</span>
+                        <input class='user' name="usuario" type="text"> <br>
+                    </div>
+                    <div class="form-pass">
+                        <span class="senha">Senha</span>
+                        <input class='pass' name="senha" type="password"> <br>
+                    </div>
+
+                    <button type="submit" id="botao">Cadastro de Congressista</button>
+                </div>
+            </form>
+
+        <!-- Apresentação Logo LIGA Login -->
+        
+        <img class="logo" src="{% static 'img/marca-ensino,pesquisa-e-inovação-horizontal-liga.png' %}">
+
+    </div>
+
+</body>
+{% endblock %}
+</html>
