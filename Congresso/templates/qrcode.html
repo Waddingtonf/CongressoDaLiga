@@ -23,8 +23,8 @@
     <!-- Container  BG -->
     <div class="container">
         <span class="scan"><p>Scan QRCode</p></span>
-        {% if msg %}
-            <span class="info"> {{ msg }} </span>
+        {% if freq %}
+            <span class="info"> {{ freq }} </span>
         {% endif%}
         <img class="qrcode" src="{% static 'img/congresso/qrcode.svg'%}">
         <span class="checkin"><p>Check In</p></span>

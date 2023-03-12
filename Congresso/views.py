@@ -76,7 +76,8 @@ def inscritos(request):
     if testes:
         data['msg'] = 1
         return render(request, 'inscritos.html', data)
-    return render(request, 'inscritos.html')
+    else:
+        return render(request, 'inscritos.html')
 
 def confirm(request):
         if request.user.is_authenticated:
@@ -95,7 +96,7 @@ def doconfirm(request):
     if request.method == 'POST':
         testes = Frequencia.objects.filter(aluno=request.user.id)
         if testes:
-            data['msg'] = 'Frequência Já Registrada'
+            data['freq'] = 'Frequência Já Registrada'
             return render(request,'qrcode.html', data)
         else:
             frequencia = FrequenciaForm()

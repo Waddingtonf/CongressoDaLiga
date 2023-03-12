@@ -127,6 +127,12 @@ html{
     flex-direction: column;
 }
 
+.seta > img{
+    display: flex;
+    flex-flow: row;
+    rotate: 180deg;
+}
+
 .botao > button{
     display: flex;
     flex-direction: column;
