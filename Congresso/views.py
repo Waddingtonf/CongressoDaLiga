@@ -71,6 +71,11 @@ def dologin(request):
         return render(request, 'login.html', data)
 
 def inscritos(request):
+    data = {}
+    testes = Frequencia.objects.filter(aluno=request.user.id)
+    if testes:
+        data['msg'] = 1
+        return render(request, 'inscritos.html', data)
     return render(request, 'inscritos.html')
 
 def confirm(request):
@@ -90,7 +95,7 @@ def doconfirm(request):
     if request.method == 'POST':
         testes = Frequencia.objects.filter(aluno=request.user.id)
         if testes:
-            data['msg'] = 'Frequência já Registrada'
+            data['msg'] = 'Frequência Já Registrada'
             return render(request,'qrcode.html', data)
         else:
             frequencia = FrequenciaForm()
@@ -98,7 +103,6 @@ def doconfirm(request):
             frequencia.aluno = request.user.id
             frequencia.cursoparticipado_id = curso.id
             frequencia.confirma = checked
-            data['msg'] = 1
             frequencia = frequencia.save()
             return render(request, 'inscritos.html', data)
     else:
