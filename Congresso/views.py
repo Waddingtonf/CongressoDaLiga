@@ -105,7 +105,8 @@ def doconfirm(request):
             frequencia.cursoparticipado_id = curso.id
             frequencia.confirma = checked
             frequencia = frequencia.save()
-            return render(request, 'inscritos.html', data)
+            data['freq'] = 'Frequência Já Registrada'
+            return render(request, 'qrcode.html', data)
     else:
          frequencia = FrequenciaForm()
 
