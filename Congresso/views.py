@@ -86,14 +86,20 @@ def doconfirm(request):
     checked = True
     data = {}
     if request.method == 'POST':
-        frequencia = FrequenciaForm()
-        frequencia = frequencia.save(commit=False)
-        frequencia.aluno = request.user.id
-        frequencia.cursoparticipado_id = curso.id
-        frequencia.confirma = checked
-        data['msg'] = 1
-        frequencia = frequencia.save()
-        return render(request, 'inscritos.html', data)
+        testes = Frequencia.objects.filter(aluno=User.objects.filter(username=request.POST['usuario']))
+
+        if testes:
+            data['msg'] = 'Frequência já Registrada'
+            return render(request,'qrcode.html', data)
+        else:
+            frequencia = FrequenciaForm()
+            frequencia = frequencia.save(commit=False)
+            frequencia.aluno = request.user.id
+            frequencia.cursoparticipado_id = curso.id
+            frequencia.confirma = checked
+            data['msg'] = 1
+            frequencia = frequencia.save()
+            return render(request, 'inscritos.html', data)
     else:
          frequencia = FrequenciaForm()
 

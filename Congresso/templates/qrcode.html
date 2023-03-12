@@ -23,6 +23,9 @@
     <!-- Container  BG -->
     <div class="container">
         <span class="scan"><p>Scan QRCode</p></span>
+        {% if msg %}
+            <span class="info"> {{ msg }} </span>
+        {% endif%}
         <img class="qrcode" src="{% static 'img/congresso/qrcode.svg'%}">
         <span class="checkin"><p>Check In</p></span>
         <form enctype="multipart/form-data" action="/doconfirm/" method="POST">
