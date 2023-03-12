@@ -26,6 +26,7 @@ html{
     align-items: center;
     flex-wrap: wrap;
     gap:5vh;
+    
 }
 
 .scan{
@@ -40,6 +41,7 @@ html{
     color: white;
     justify-content: center;
     align-items: center; 
+    flex-direction: column;
 }
 
 .qrcode{
@@ -52,6 +54,7 @@ html{
     padding-bottom: 15px;
     padding-left: 12px;
     padding-right: 12px;
+    flex-direction: column;
 }
 
 .checkin{
@@ -65,7 +68,8 @@ html{
     font-style: normal;
     color: white;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    flex-direction: column; 
   
 }
 
@@ -88,6 +92,7 @@ html{
 
 .info{
     display: flex;
+    flex-direction: column;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
@@ -114,26 +119,18 @@ html{
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 5vh;
     flex-direction: column;
+    padding-top: 5vh;
 }
 
 .botao{
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.seta > img{
-    display: flex;
-    flex-flow: row;
-    rotate: 180deg;
-}
-
-.botao > button{
+.botao > button {
     display: flex;
     flex-direction: column;
     width: 20vh;
@@ -151,6 +148,35 @@ html{
 	cursor: pointer;
     margin-top: 1vh;
     box-shadow: 0 0 5px #494949;
+}
+
+
+.seta{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    padding-top: 2vh;
+}
+
+.seta > p{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding-left: 5vw;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    color: white;
+}
+
+.arrow{
+    rotate: 180deg;
+    display: flex;
+    flex-direction: row;
 }
 
 .custom-checkbox input{
