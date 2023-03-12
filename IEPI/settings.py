@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['congressodaliga-production.up.railway.app', '127.0.0.1', 'loca
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 
-CSRF_TRUSTED_ORIGINS = ['congressodaliga-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://congressodaliga-production.up.railway.app']
 
 # Application definition
 
