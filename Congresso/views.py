@@ -88,9 +88,9 @@ def doconfirm(request):
     checked = True
     data = {}
     if request.method == 'POST':
-        testes = Frequencia.objects.filter(aluno=User.objects.filter(username=request.POST['usuario']).id)
+        testes = Frequencia.objects.filter(aluno=User.objects.filter(username=request.POST['usuario']))
 
-        if testes:
+        if testes.id:
             data['msg'] = 'Frequência já Registrada'
             return render(request,'qrcode.html', data)
         else:
