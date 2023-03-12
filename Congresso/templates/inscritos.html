@@ -1,0 +1,161 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inscritos - Congresso da Liga</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href= "{% static 'css/inscritos.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"
+
+    <!-- Scripts -->
+
+    <script defer href="{% static 'js/inscritos-js/script.js' %}"> </script>
+
+</head>
+
+<body>
+    <!-- Apresentação Logo LIGA HOME_PAGE -->
+
+    <header class="header"> 
+        <img class="head" src="{% static 'img/inscritos/Top-Filter.svg' %}">
+        <img class="head2" src="{% static 'img/inscritos/Top.svg' %}">
+        <a href="#"><img class="logo" src="{% static 'img/inscritos/marca ensino, pesquisa e inovação horizontal branca.png' %}"></a>
+        <div class="right-box">
+            <a href="#"><img class="notification" src="{% static 'img/inscritos/heroicons-solid_bell.svg' %}"> </a>
+            <a href="#"><img class="circle" src="{% static 'img/login/business-3d-young-man-in-formalwear-standing-with-hands-on-hip.svg' %}"></a>
+        </div>
+
+        <div class="calling">
+            <p> Prezado, </p>
+        </div>
+
+        {% if request.user.is_authenticated %}
+        <div class="joining">
+            <p> {{ user.username }} </p>
+            <a ><img onclick=changeImage() class="eye" id="eye" src="{% static 'img/inscritos/OlhosNotSelected.svg' %}"></a>
+        </div>
+        {% else %}
+        <div class="joining">
+            <p> @Anonymous </p>
+            <a ><img onclick=changeImage() class="eye" id="eye" src="{% static 'img/inscritos/OlhosNotSelected.svg' %}"></a>
+        </div>
+        {% endif %}
+    </header>
+    <!-- Div Hero -->
+    <div class="hero">
+        <ul class="hero-board flex">
+            <li ><a class="courses" >Meus Cursos</a></li>
+            <li><a class="information"  >Informações</a></li>
+            <li><a class="cronogram" >Cronograma</a></li>
+        </ul>
+        <p class="waiting1">(Em breve!)</p>
+        <p class="waiting2">(Em breve!)</p>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <section id="courses">
+            <div id="enfermagem">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/medkit.svg' %}"></span>
+                <span class="text-curso">FARMÁCIA E ENFERMAGEM</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="experiencia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/user.svg' %}"></span>
+                <span class="text-curso">EXPERIÊNCIA DO PACIENTE</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="fisioterapia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/ambulance.svg' %}"></span>
+                <span class="text-curso">FISIOTERAPIA</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="social">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/people.svg' %}"></span>
+                <span class="text-curso">SERVIÇO SOCIAL</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="pesquisa">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/lupa2.svg' %}"></span>
+                <span class="text-curso">PESQUISA CLÍNICA</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="radiologia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/nuclear2.svg' %}"></span>
+                <span class="text-curso">RADIOLOGIA E MEDICINA NUCLEAR</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="nutrição">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/apple.svg' %}"></span>
+                <span class="text-curso">NUTRIÇÃO</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="dor">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/drugs.svg' %}"></span>
+                <span class="text-curso">MANEJO DA DOR</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="fonoaudiologia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/headphone1.svg' %}"></span>
+                <span class="text-curso">FONOAUDIOLOGIA</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="odontologia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/tooth.svg' %}"></span>
+                <span class="text-curso">ODONTOLOGIA</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="psicologia">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/brain.svg' %}"></span>
+                <span class="text-curso">PSICOLOGIA</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            <div id="simposio">
+                <span class="logo-curso"><img src="{% static 'img/inscritos/document.svg' %}"></span>
+                <span class="text-curso">SIMPÓSIO CC E CME</span>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+            {% if msg == 1 %}
+
+            <div id="congresso">
+                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
+                <span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span>
+                <span class="verified"><img src="{% static 'img/inscritos/Check.svg' %}"></span>
+            </div>
+
+            {% else %}
+            <div id="congresso">
+                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
+                <a class='links' style="color:#BA1065;list-style: none;text-decoration: none;" href="{% url 'congresso' %}"><span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span> </a>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+
+
+            {% endif %}
+        </section>
+        <section id="informations">
+            <span class="text-informations"></span>
+        </section>
+        <section id="cronograms">
+            <span class="text-cronogram"></span>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="circle2">         </div>
+        <span class="rounded"></span>
+        <span class="rounded"></span>
+        <span class="rounded"></span>
+        <div class="square">        </div>
+    </footer>
+</body>
+</html>

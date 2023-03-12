@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan QRCode - Congresso da Liga</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{% static 'css/congresso.css'%}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}">
+
+</head>
+
+{% block body %}
+<body>
+    <!-- Container  BG -->
+    <div class="container">
+        <span class="scan"><p>Scan QRCode</p></span>
+        <img class="qrcode" src="{% static 'img/congresso/qrcode.svg'%}">
+        <span class="checkin"><p>Check In</p></span>
+        <span class="comando"><p>Escaneie o QRCode para <br><br> Confirmar sua presença!</p></span>
+        <span class="info"><p>A soma das presenças contabilizará em um <br>Desconto em cursos da Liga - IEPI </p></span>
+        <span class="adesao"><p>Ao concluir, as informações você aceita os <br> termos de adesão e de responsabilidade.</p></span>
+        <a class="botao" href="{% url 'inscritos' %}"><button type="submit">Concluir</button></a>
+    <!--   <img class="arrow" src="{% static 'img/Arrow.svg' %}">-->
+    </div>
+</body>
+
+{% endblock %}
+</html>
