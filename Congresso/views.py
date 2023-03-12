@@ -73,20 +73,22 @@ def dologin(request):
 def inscritos(request):
     return render(request, 'inscritos.html')
 
-@login_required(redirect_field_name='login')
 def confirm(request):
-        form = FrequenciaForm()
-        curso = Cursos.objects.get(curso='Evento Especial - Congresso da Liga')
-        print(curso.curso)
-        msg = curso.curso
-        return render(request, 'qrcode.html', {'form':form, 'msg':msg})
+        if request.user.is_authenticated:
+            form = FrequenciaForm()
+            curso = Cursos.objects.get(curso='Evento Especial - Congresso da Liga')
+            print(curso.curso)
+            msg = curso.curso
+            return render(request, 'qrcode.html', {'form':form, 'msg':msg})
+        else:
+            return redirect('login')
 
 def doconfirm(request):
     curso = Cursos.objects.get(id=1)
     checked = True
     data = {}
     if request.method == 'POST':
-        testes = Frequencia.objects.filter(aluno=User.objects.filter(username=request.POST['usuario']))
+        testes = Frequencia.objects.filter(aluno=User.objects.filter(username=request.POST['usuario']).id)
 
         if testes:
             data['msg'] = 'Frequência já Registrada'
