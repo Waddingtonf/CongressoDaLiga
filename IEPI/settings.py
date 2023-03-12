@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4(xsv4l=k$#xwzd9(ypzrg-(6kpjkm+l^)mp$diyy@!9_&a^wt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [' * ']
+ALLOWED_HOSTS = ['congressodaliga-production.up.railway.app']
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 
