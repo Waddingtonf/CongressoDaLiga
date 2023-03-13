@@ -66,6 +66,23 @@
     <!-- Container -->
     <div class="container">
         <section id="courses">
+            {% if msg == 1 %}
+
+            <div id="congresso">
+                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
+                <span class="text-curso">START 50 - CONGRESSO DA LIGA</span>
+                <span class="verified"><img src="{% static 'img/inscritos/Check.svg' %}"></span>
+            </div>
+
+            {% else %}
+            <div id="congresso">
+                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
+                <a class='links' style="color:#BA1065;list-style: none;text-decoration: none;" href="{% url 'congresso' %}"><span class="text-curso">START 50 - CONGRESSO DA LIGA</span> </a>
+                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
+            </div>
+
+
+            {% endif %}
             <div id="enfermagem">
                 <span class="logo-curso"><img src="{% static 'img/inscritos/medkit.svg' %}"></span>
                 <span class="text-curso">FARMÁCIA E ENFERMAGEM</span>
@@ -126,23 +143,7 @@
                 <span class="text-curso">SIMPÓSIO CC E CME</span>
                 <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
             </div>
-            {% if msg == 1 %}
 
-            <div id="congresso">
-                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
-                <span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span>
-                <span class="verified"><img src="{% static 'img/inscritos/Check.svg' %}"></span>
-            </div>
-
-            {% else %}
-            <div id="congresso">
-                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
-                <a class='links' style="color:#BA1065;list-style: none;text-decoration: none;" href="{% url 'congresso' %}"><span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span> </a>
-                <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
-            </div>
-
-
-            {% endif %}
         </section>
         <section id="informations">
             <span class="text-informations"></span>
