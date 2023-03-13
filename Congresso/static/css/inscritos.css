@@ -132,7 +132,7 @@ html{
 .hero-board.flex{
     display: flex;
     position: absolute;
-    margin-top: 11vh;
+    margin-top: 11.5vh;
     margin-left: 4vw;
     gap: 12px;
     flex-direction: row;
