@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +25,9 @@ SECRET_KEY = 'django-insecure-4(xsv4l=k$#xwzd9(ypzrg-(6kpjkm+l^)mp$diyy@!9_&a^wt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['congressodaliga-production.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS=['*']
+
+CROS_ORIGIN_ALLOW_ALL = True
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 

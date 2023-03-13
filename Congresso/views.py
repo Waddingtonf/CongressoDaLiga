@@ -114,3 +114,23 @@ def doconfirm(request):
 
 def congresso(request):
     return render(request, 'congresso.html')
+
+def resetpassword(request):
+    return render(request,'reset.html')
+
+def changePassword(request):
+    data={}
+    i=1
+    while i < 131:
+        user = User.objects.get(id=i)
+        if user.check_password('LIGA@1234'):
+            user.set_password('start50')
+            user.save()
+            print('nova senha adicionada para' + user.username)
+            i= i+1
+        else:
+            print('senha de' + user.username + 'diferente')
+            i=i+1
+    data['msg'] = 'Todas as senhas foram resetadas'
+    return render(request, 'reset.html', data)
+         

@@ -28,4 +28,6 @@ urlpatterns = [
     path('congresso-simulacao', views.confirm, name='confirmarpresença'),
     path('congresso', views.congresso, name='congresso'),
     path('doconfirm/', views.doconfirm, name='doconfirm'),
+    path('reset', views.resetpassword, name='reset'),
+    path('changepassword/', views.changePassword, name='changepassword'),
 ]
