@@ -37,7 +37,6 @@ html{
 }
 
 .circle{
-    background: white;
     width:  45px;
     height: 45px;
     display: flex;
@@ -46,7 +45,6 @@ html{
     margin-top: 5vh;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 1px 3px 3px rgb(59, 59, 59);
 }
 
 .notification{

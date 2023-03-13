@@ -53,16 +53,14 @@ body {
     margin-left: 2vw;
 }
 
-.circle{
-    background: white;
-    width:  150px;
-    height: 150px;
+.circle {
+    width:  170px;
+    height: 170px;
     display: flex;
-    margin-left: 31vw;
+    margin-left: 28vw;
     margin-top: 18vh;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 1px 3px 3px rgb(59, 59, 59);
 }
 
 
@@ -97,6 +95,7 @@ body {
     border: 1px solid #694294;
     border-radius: 10px;
     background: white;
+    padding-bottom: 1vh;
 }
 
 
@@ -113,7 +112,7 @@ body {
     line-height: 20px;
     font-family: 'Inter';
     font-style: normal;
-    width: 14vw;
+    width: 14.5vw;
     padding: 3px;
 }
 
@@ -130,7 +129,7 @@ body {
     font-family: 'Inter';
     font-style: normal;
     margin-top: 0.8vh;
-    width: 12vw;
+    width: 12.5vw;
     padding: 3px;
 }
 
@@ -144,7 +143,7 @@ body {
 	text-transform: uppercase;
     font-family: 'Inter';
     font-style: normal;
-    margin-top: 25vh;
+    margin-top: 27vh;
     font-weight: 600;
     font-size: 18px;
     line-height: 25px;
