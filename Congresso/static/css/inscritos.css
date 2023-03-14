@@ -238,7 +238,8 @@ html{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-left: 20px;
+    padding-left: 10px;
+    gap: 8px;
 }
 
 #information{
@@ -261,10 +262,10 @@ html{
 
 .waiting1{
     font-size: 11px;
-    margin-top: 13vh;
+    margin-top: 14vh;
     justify-content: left;
     align-items: center;
-    margin-left: 38vw;
+    margin-left: 42vw;
     color: #BA1065;
     display: flex;
     font-family: 'Inter';
@@ -276,10 +277,10 @@ html{
 
 .waiting2{
     font-size: 11px;
-    margin-top: 13vh;
+    margin-top: 14vh;
     justify-content: left;
     align-items: center;
-    margin-left: 65vw;
+    margin-left: 70vw;
     color: #BA1065;
     display: flex;
     font-family: 'Inter';
@@ -297,7 +298,7 @@ html{
     height: 50vh;
     justify-content: space-between;
     align-items: space-between;
-    padding: 18vh;
+    padding: 16vh;
 }
 
 .logo-curso img{
